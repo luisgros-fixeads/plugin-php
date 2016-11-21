@@ -16,6 +16,18 @@ class Settings
     }
 
     /**
+     * Load environment variables from .env file
+     *
+     * @param string $path
+     * @param string $file
+     */
+    public function loadDotEnv($path, $file = '.env')
+    {
+        $dotEnv = new Dotenv($path, $file);
+        $dotEnv->load();
+    }
+
+    /**
      * Returns the setting with the given name.
      *
      * @param $name

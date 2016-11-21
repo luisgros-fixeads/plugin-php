@@ -74,6 +74,8 @@ class Athena
                 $settings->set('browser', ATHENA_BROWSER);
             }
 
+            $settings->loadDotEnv(getcwd());
+
             static::$instance = new static($settings, new EventDispatcher());
         }
 
